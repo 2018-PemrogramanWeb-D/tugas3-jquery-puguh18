@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $("#butt").click(function(){
+        $("#test11").hide();
+    });
+
+    $("#btn1").click(function(){
+        $("#test1").text("Nice to meet you");
+    });
+    $("#btn2").click(function(){
+        $("#test2").html("<b>Nice to meet you too</b>");
+    });
+    $("#btn3").click(function(){
+        $("#test3").val("NOOOOOOOOOOOOO");
+    });
+    $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+</script>
+
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #9b59b6;
+}
+tr:nth-child(odd) {
+    background-color: white;
+}
+</style>
+
+</head>
+
+<body style="text-align: center; background-color: #fffa65" >
+
+<h1 style="background-color: DodgerBlue; text-align: center;">This is a heading</h1>
+
+<p>This is my boyfriend.</p>
+<p id="test11">This is my girlfriend.</p>
+
+<button id="butt">Click to hide my girlfriend</button>
+
+<br> <br>
+<p id="test1">Hey, my name is Gina.</p>
+<p id="test2">Hey, my name is Mark.</p>
+
+<p>Input field: <input type="text" id="test3" value="Hello sir"></p>
+
+<button id="btn1" style="background: #55efc4">Say Gina</button>
+<button id="btn2" style="background: #ff4d4d">Set Mark</button>
+<button id="btn3"  style="background: #32ff7e">Say Sir</button>
+
+<h2>Filterable Table</h2>
+<p>Type something in the input field to search the table for first names, last names or emails:</p>  
+<input id="myInput" type="text" placeholder="Search..">
+<br><br>
+
+<center>
+<table >
+  <thead>
+    <tr style="background-color: #bdc3c7">
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody id="myTable">
+    <tr>
+      <td>Mark</td>
+      <td>Rufalo</td>
+      <td>john@example.com</td>
+    </tr>
+    <tr>
+      <td>Mary</td>
+      <td>DidYouKnow</td>
+      <td>mary@mail.com</td>
+    </tr>
+    <tr>
+      <td>July</td>
+      <td>June</td>
+      <td>july@notsogreat.com</td>
+    </tr>
+    <tr>
+      <td>Anja</td>
+      <td>Ni</td>
+      <td>ar@test.com</td>
+    </tr>
+  </tbody>
+</table>
+</center>
+
+</body>
+</html>
